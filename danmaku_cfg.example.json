@@ -1,0 +1,33 @@
+{
+    "global": {
+        "csrf": "Your bili_jct here",
+        "sessdata": "Your sessdata here"
+    },
+    "global_interval": 10,
+    "rooms": [
+        {
+            "room_id": 23771092,
+            "msg": "又一又一，闪耀唯一！",
+            "interval": 60,
+            "enable": true
+        },
+        {
+            "room_id": 23771139,
+            "msg": "沐霂沐霂，炫彩夺目!",
+            "interval": 60,
+            "enable": true
+        },
+        {
+            "room_id": 23771189,
+            "msg": "恬豆恬豆，恬生爱豆!",
+            "interval": 60,
+            "enable": true
+        },
+        {
+            "room_id": 23770996,
+            "msg": "梨安梨安，我心所安!",
+            "interval": 60,
+            "enable": true
+        }
+    ]
+}
