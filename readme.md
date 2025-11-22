@@ -18,7 +18,7 @@ A simple danmaku bot for bilibili.com written in Python.
 4. Run `danmaku_bot.py`
 
 ## Note
-If you're not using a proxy, uncomment line 45-46
+If you're not using a proxy, please comment line 45-46
 ```python
 proxies = {
     #"http": "http://127.0.0.1:7890",      # 本地 HTTP 代理示例
