@@ -27,3 +27,5 @@ proxies = {
 ```
 
 If your proxy is not running on `127.0.0.1:7890`, change the IP and port accordingly.
+
+If you made changes to `danmaku_cfg.json` and want to restart the bot, you can simply terminate the program and run it again. The program will automatically load the new configuration.
