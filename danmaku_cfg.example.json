@@ -1,9 +1,11 @@
 {
-    "global": {
-        "csrf": "Your bili_jct here",
-        "sessdata": "Your sessdata here"
-    },
     "global_interval": 10,
+    "notifications": {
+        "enabled": false,
+        "cooldown": 1800,
+        "notify_recovery": true,
+        "daily_limit": 5
+    },
     "rooms": [
         {
             "room_id": 23771092,

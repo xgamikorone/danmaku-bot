@@ -1,1 +1,8 @@
-./danmaku_cfg.json
+danmaku_cfg.json
+cookies.json
+danmaku.log*
+__pycache__/
+*.py[cod]
+.venv/
+.serverchan_state.json
+.serverchan_state.json.tmp

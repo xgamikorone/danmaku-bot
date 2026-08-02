@@ -6,6 +6,8 @@ import logging
 
 from logging.handlers import TimedRotatingFileHandler
 
+import cookies
+
 log_format = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
 
 file_handler = TimedRotatingFileHandler(
@@ -29,16 +31,16 @@ logging.basicConfig(
 with open("danmaku_cfg.json", "r", encoding="utf-8") as f:
     config = json.load(f)
 
-csrf = config["global"]["csrf"]
-sessdata = config["global"]["sessdata"]
+# csrf = config["global"]["csrf"]
+# sessdata = config["global"]["sessdata"]
+cookie = cookies.get_cookies()
+csrf = cookie["bili_jct"]
 
-cookies = {
-    "SESSDATA": sessdata,
-    "bili_jct": csrf
-}
+cookie_str = cookies.parse_cookies()
 
 headers = {
-    "User-Agent": "Mozilla/5.0"
+    "User-Agent": "Mozilla/5.0",
+    "Cookie": cookie_str,
 }
 
 proxies = {
@@ -80,7 +82,7 @@ def danmu_loop(room_id, msg, interval):
             }
             try:
                 res = requests.post("https://api.live.bilibili.com/msg/send", data=data,
-                                    cookies=cookies, headers=headers, proxies=proxies)
+                                    headers=headers, proxies=proxies)
                 logging.info(f"[{room_id}] 弹幕返回：{res.status_code} | {res.json()}")
             except Exception as e:
                 logging.error(f"[{room_id}] ❌ 发送失败：{e}")
